@@ -4,6 +4,9 @@ public interface Shape {
 
 public class Rectangle implements Shape {
 
+   public static Rectangle getInstance(){
+      return instance;
+   }
    @Override
    public void draw() {
       System.out.println("Shape: Rectangle");
@@ -12,10 +15,15 @@ public class Rectangle implements Shape {
 
 public class Circle implements Shape {
 
+   public static Circle getInstance(){
+      return instance;
+   }
    @Override
    public void draw() {
       System.out.println("Shape: Circle");
    }
+   
+   
 }
 
 public abstract class ShapeDecorator implements Shape {
@@ -68,7 +76,7 @@ public class DecoratorPatternDemo {
 
 public class SingleObject {
 
-   private static SingleObject instance = new SingleObject();
+   private static Circle instance = new Circle();
 
    private SingleObject(){}
 
